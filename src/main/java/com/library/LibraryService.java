@@ -86,6 +86,25 @@ public class LibraryService {
 
         return false;
     }
+     
+    /*
+ * Finds a book in the library using its ID.
+ */
+    public Book findBookById(int id) {
+
+        for (Book book : books) {
+
+            if (book.getId() == id) {
+                return book;
+
+            }
+
+      }
+
+      return null;
+   }  
+
+    
 
 
     /*
@@ -96,3 +115,4 @@ public class LibraryService {
         return books;
     }
 }
+
