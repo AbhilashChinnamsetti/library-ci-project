@@ -107,6 +107,10 @@ public class LibraryService {
 /*
  * Removes a book from the library using its ID.
  */
-    
+    public void removeBook(int id) {
+
+        books.removeIf(book -> book.getId() == id);
+
+    }
 } 
 
