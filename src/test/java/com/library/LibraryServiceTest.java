@@ -116,14 +116,14 @@ public class LibraryServiceTest {
     @Test
     void testCountBooks() {
 
-    // Setup: create a new LibraryService instance
+    // Setup: create a new LibraryService instance.
         LibraryService library = new LibraryService();
 
     // Add two books to the library
         library.addBook(new Book(1, "Book1", "Author"));
         library.addBook(new Book(2, "Book2", "Author"));
 
-    // Assertion: verify the countBooks() method returns 2
+    // Assertion: verify the countBooks() method returns 2.
         assertEquals(2, library.countBooks());
     }
 

@@ -94,18 +94,18 @@ public class LibraryService {
     /**
  * Counts the total number of books currently stored in the library.
  *
- * @return total number of books in the library collection
+ * @return total number of books in the library collection.
  */
     public int countBooks() {
 
-    // books is the list that stores all Book objects in the library
-    // size() returns how many books exist in the list
+    // books is the list that stores all Book objects in the library.
+    // size() returns how many books exist in the list.
         return books.size();
     }
 
 
     /*
-     * Return all books in the library
+     * Return all books in the library.
      */
     public List<Book> getBooks() {
         return books;
