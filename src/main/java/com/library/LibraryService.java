@@ -58,11 +58,7 @@ public class LibraryService {
     /*
      * Remove a book from the library
      */
-    public void removeBook(int id) {
 
-        books.removeIf(book -> book.getId() == id);
-
-    }
 
 
     /*
