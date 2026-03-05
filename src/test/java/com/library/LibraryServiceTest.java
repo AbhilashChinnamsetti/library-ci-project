@@ -74,4 +74,21 @@ public class LibraryServiceTest {
         assertTrue(returned);
         assertFalse(book.isBorrowed());
     }
+
+    @Test
+    void testRemoveBook() {
+
+        LibraryService library = new LibraryService();
+
+        Book book = new Book(1,"Clean Code","Robert Martin");
+
+        library.addBook(book);
+
+        library.removeBook(1);
+
+        assertNull(library.findBookById(1));
+    }
+     
+
+
 }

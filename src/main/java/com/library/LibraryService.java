@@ -90,19 +90,6 @@ public class LibraryService {
     /*
  * Finds a book in the library using its ID.
  */
-    public Book findBookById(int id) {
-
-        for (Book book : books) {
-
-            if (book.getId() == id) {
-                return book;
-
-            }
-
-      }
-
-      return null;
-   }  
 
     
 
@@ -114,5 +101,12 @@ public class LibraryService {
     public List<Book> getBooks() {
         return books;
     }
-}
+    /*
+ * Removes a book from the library using its ID.
+ */
+/*
+ * Removes a book from the library using its ID.
+ */
+    
+} 
 
