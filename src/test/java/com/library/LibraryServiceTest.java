@@ -95,5 +95,18 @@ public class LibraryServiceTest {
         // Assertion
         assertNull(library.findBookById(1));
     }
+    @Test
+    void testFindBookByTitle() {
+
+        LibraryService library = new LibraryService();
+
+        Book book = new Book(1,"Clean Code","Robert Martin");
+
+        library.addBook(book);
+
+        Book result = library.findBookByTitle("Clean Code");
+
+        assertNotNull(result);
+    }
 
 }

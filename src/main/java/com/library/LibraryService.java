@@ -79,6 +79,18 @@ public class LibraryService {
 
         return null;
     }
+    public Book findBookByTitle(String title) {
+
+        for (Book book : books) {
+
+            if (book.getTitle().equals(title)) {
+                return book;
+            }
+
+        }
+
+        return null;
+    }
 
 
     /*
