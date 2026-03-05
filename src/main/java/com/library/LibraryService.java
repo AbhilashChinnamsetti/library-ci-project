@@ -4,28 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * LibraryService class contains the main business logic
+ * LibraryService contains the main business logic
  * for managing books in the library.
- *
- * It supports operations such as:
- *  - Adding books
- *  - Borrowing books
- *  - Returning books
  */
 public class LibraryService {
 
-    // Internal list storing all books in the library
+    // List that stores all books
     private List<Book> books = new ArrayList<>();
 
 
     /*
-     * Adds a new book to the library collection.
-     *
-     * Input:
-     *   Book object
-     *
-     * Result:
-     *   Book is stored in the internal list
+     * Adds a new book to the library
      */
     public void addBook(Book book) {
         books.add(book);
@@ -33,26 +22,15 @@ public class LibraryService {
 
 
     /*
-     * Allows a user to borrow a book using its ID.
-     *
-     * Logic:
-     * 1. Search the list of books
-     * 2. If the book exists and is not borrowed
-     * 3. Mark it as borrowed
-     *
-     * Returns:
-     *   true  -> borrow successful
-     *   false -> book unavailable
+     * Borrow a book by ID
      */
     public boolean borrowBook(int id) {
 
         for (Book book : books) {
 
             if (book.getId() == id && !book.isBorrowed()) {
-
                 book.borrowBook();
                 return true;
-
             }
         }
 
@@ -61,56 +39,52 @@ public class LibraryService {
 
 
     /*
-     * Allows a user to return a previously borrowed book.
-     *
-     * Logic:
-     * 1. Find the book by ID
-     * 2. Verify it is currently borrowed
-     * 3. Mark it as returned
-     *
-     * Returns:
-     *   true  -> return successful
-     *   false -> return failed
+     * Return a borrowed book
      */
     public boolean returnBook(int id) {
 
         for (Book book : books) {
 
             if (book.getId() == id && book.isBorrowed()) {
-
                 book.returnBook();
                 return true;
-
             }
         }
 
         return false;
     }
-     
-    /*
- * Finds a book in the library using its ID.
- */
-
-    
 
 
     /*
-     * Returns the list of all books in the library.
-     * Used mainly for testing and verification.
+     * Remove a book from the library
      */
-    public List<Book> getBooks() {
-        return books;
-    }
-    /*
- * Removes a book from the library using its ID.
- */
-/*
- * Removes a book from the library using its ID.
- */
     public void removeBook(int id) {
 
         books.removeIf(book -> book.getId() == id);
 
     }
-} 
 
+
+    /*
+     * Find a book by ID
+     */
+    public Book findBookById(int id) {
+
+        for (Book book : books) {
+
+            if (book.getId() == id) {
+                return book;
+            }
+        }
+
+        return null;
+    }
+
+
+    /*
+     * Return all books in the library
+     */
+    public List<Book> getBooks() {
+        return books;
+    }
+}

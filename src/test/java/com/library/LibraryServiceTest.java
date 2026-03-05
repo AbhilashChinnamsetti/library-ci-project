@@ -23,10 +23,10 @@ public class LibraryServiceTest {
         LibraryService library = new LibraryService();
         Book book = new Book(1, "Java Programming", "James Gosling");
 
-        // Action: add book to the library
+        // Action
         library.addBook(book);
 
-        // Assertion: verify the library now contains one book
+        // Assertion
         assertEquals(1, library.getBooks().size());
     }
 
@@ -47,7 +47,7 @@ public class LibraryServiceTest {
         // Action
         boolean borrowed = library.borrowBook(1);
 
-        // Assertion
+        // Assertions
         assertTrue(borrowed);
         assertTrue(book.isBorrowed());
     }
@@ -70,25 +70,30 @@ public class LibraryServiceTest {
         // Action
         boolean returned = library.returnBook(1);
 
-        // Assertion
+        // Assertions
         assertTrue(returned);
         assertFalse(book.isBorrowed());
     }
 
+
+    /*
+     * Test Case:
+     * Verify that a book can be removed from the library.
+     */
     @Test
     void testRemoveBook() {
 
+        // Setup
         LibraryService library = new LibraryService();
-
-        Book book = new Book(1,"Clean Code","Robert Martin");
+        Book book = new Book(1, "Clean Code", "Robert Martin");
 
         library.addBook(book);
 
+        // Action
         library.removeBook(1);
 
+        // Assertion
         assertNull(library.findBookById(1));
     }
-     
-
 
 }
